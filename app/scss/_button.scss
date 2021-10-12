@@ -1,8 +1,15 @@
 .btn {
   padding: 12px;
+  font-family: "Open Sans", sans-serif;
   &--green {
     background: $green;
-    border-radius: 4px;    
+    border-radius: 4px;
+    color: $black;
+  }
+  &--white {
+    background: $white;
+    border-radius: 4px;
+    color: $black;
   }
   &--sm {
     width: 44px;
