@@ -1,0 +1,14 @@
+.btn {
+  padding: 12px;
+  &--green {
+    background: $green;
+    border-radius: 4px;    
+  }
+  &--sm {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

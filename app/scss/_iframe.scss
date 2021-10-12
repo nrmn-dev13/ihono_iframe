@@ -1,0 +1,58 @@
+.section-index {
+  height: 100%;
+  .iframe-wrapper {
+    height: 100%;
+    .main-iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+.section-iframe {
+  background-color: $ltGray;
+  height: 100%;
+  padding: 30px;
+  .form {
+    padding: 15px;
+    background-color: $secBlack;
+    .input-wrapper {
+      .form-control {
+        height: 54px;        
+        font-style: italic;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 125%;
+        color: $black;
+        background: $white;
+        border: 2px solid $white;
+        box-sizing: border-box;
+        border-radius: 8px;
+        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+          color: $secGray;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+          color: $secGray;
+        }
+        &:-ms-input-placeholder { /* IE 10+ */
+          color: $secGray;
+        }
+        &:-moz-placeholder { /* Firefox 18- */
+          color: $secGray;
+        }
+      }
+      .action {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        bottom: 0;
+        right: 4px;
+        display: flex;
+        align-items: center;
+        .icon.icon--location {
+          margin-right: 14px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
