@@ -7,7 +7,7 @@ var vacStationModal = new bootstrap.Modal(document.getElementById("stationModal"
 var vacBusesModal = new bootstrap.Modal(document.getElementById("busesModal"), {});
 document.onreadystatechange = function () {
   //getStartedModal.show();
-  //vacStationModal.show();
+  vacStationModal.show();
   //vacBusesModal.show();
 };
 // Checkbox function

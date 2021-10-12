@@ -57,9 +57,15 @@ main {
       width: 100%;
       &.img--left {
         max-width: 156px;
+        @media #{$mq-360} {
+          max-width: 120px;
+        }
       }
       &.img--right {
         max-width: 100px;
+        @media #{$mq-360} {
+          max-width: 70px;
+        }
       }
     }
   }
