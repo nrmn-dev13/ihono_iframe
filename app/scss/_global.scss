@@ -38,7 +38,7 @@ main {
     position: relative;
     padding: 0 34px;
     &::after {
-      content: '';
+      content: "";
       border-left: 1px solid $gray;
       height: 100%;
       position: absolute;
@@ -51,7 +51,7 @@ main {
         border-left: none;
       }
     }
-    .img-fluid {      
+    .img-fluid {
       height: 100%;
       object-fit: contain;
       width: 100%;
@@ -67,6 +67,17 @@ main {
 .icon {
   display: flex;
   flex: 0 0 auto;
+  &--circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    &.green {
+      border: 5px solid #4D9D2E;
+    }
+    &.red {
+      border: 5px solid #DC3545;
+    }
+  }
   &--location {
     width: 20px;
     height: 20px;
@@ -81,7 +92,111 @@ main {
     background-repeat: no-repeat;
     background-image: url(../dist/img/icon-search.png);
   }
+  &--station {
+    width: 24px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../dist/img/vaccination-stations-icon.png);
+  }
+  &--interest {
+    width: 24px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../dist/img/location-interest-icon.png);
+  }
+  &--testing {
+    width: 24px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../dist/img/testing-sites-icon.png);
+  }
+  &--buses {
+    width: 24px;
+    height: 28px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../dist/img/vaccination-buses-icon.png);
+  }
 }
 .input-wrapper {
   position: relative;
+}
+.custom-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 0 0 20px;
+  &:last-child {
+    margin: 0;
+  }
+  &.reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    .custom-checkbox {
+      margin-right: 10px;
+    }
+  }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 12px;
+    }
+  }
+  .form-control--checkbox {
+    display: none;
+    &:checked ~ .custom-checkbox {
+      .icon--check {
+        display: block;
+      }
+    }
+  }
+  .custom-checkbox {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border: 2px solid #282727;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    .icon--check {
+      display: none;
+      color: #282727;
+      font-size: 16px;
+    }
+  }
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $ltGray;
+  box-sizing: border-box;
+  border-radius: 100px;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 19px;
+  color: $black;
+}
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  &__item {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 10px;
+    }
+  }
 }

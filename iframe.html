@@ -27,19 +27,38 @@
       rel="stylesheet"
     />
 
-    <!-- CSS File -->    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS File -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="dist/style.css?cb=1634008180378" />
   </head>
   <body>
     <main>
       <header class="header">
         <figure class="image-wrapper">
-          <img class="img-fluid img--left" src="./dist/img/logo-left.png" alt="">
+          <img
+            class="img-fluid img--left"
+            src="./dist/img/logo-left.png"
+            alt=""
+          />
         </figure>
         <figure class="image-wrapper">
-          <img class="img-fluid img--right" src="./dist/img/logo-right.png" alt="">
+          <img
+            class="img-fluid img--right"
+            src="./dist/img/logo-right.png"
+            alt=""
+          />
         </figure>
       </header>
       <section class="section-iframe">
@@ -47,7 +66,11 @@
           <form action="" class="form form--filter">
             <div class="form-group">
               <div class="input-wrapper input-wrapper--has-icon">
-                <input type="text" class="form-control" placeholder="Enter an address">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter an address"
+                />
                 <div class="action">
                   <i class="icon icon--location"></i>
                   <button class="btn btn--green btn--has-icon btn--sm">
@@ -57,21 +80,305 @@
               </div>
             </div>
             <div class="form-group">
-              <button type="button" class="btn btn--white btn--has-icon">
+              <button
+                type="button"
+                class="btn btn--white btn--has-icon"
+                data-bs-toggle="modal"
+                data-bs-target="#filterModal"
+              >
                 <i class="icon fas fa-sliders-h"></i>
-                Filter by  Location Type
+                Filter by Location Type
               </button>
             </div>
           </form>
           <div class="iframe-wrapper">
-            <iframe class="map" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+            <iframe
+              class="map"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+            <div class="button-wrapper">
+              <button class="btn btn--white btn--rounded">
+                <i class="icon fas fa-bell"></i> Notify me locations of interest
+              </button>
+            </div>
           </div>
         </div>
-      </section>      
+      </section>
     </main>
-
+    <!-- Get started modal -->
+    <div
+      class="modal modal--covid-map fade"
+      id="getStarted"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="getStartedLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="content">
+              <div class="modal-info">
+                <div class="modal-field">
+                  <h4 class="title">Stay safe during COVID</h4>
+                  <p class="text">
+                    Find walk in vaccination centres, testing sites and
+                    locations of interest in your area. And use filter location
+                    type for easy search.
+                  </p>
+                </div>
+                <div class="modal-field modal-field--list">
+                  <h6 class="subtitle">Filter location type</h6>
+                  <div class="title-wrapper">
+                    <i class="icon icon--station"></i>
+                    <p class="text">Vaccination stations - walk-in</p>
+                  </div>
+                  <div class="title-wrapper">
+                    <i class="icon icon--buses"></i>
+                    <p class="text">Vaccination Buses</p>
+                  </div>
+                  <div class="title-wrapper">
+                    <i class="icon icon--testing"></i>
+                    <p class="text">Testing Sites</p>
+                  </div>
+                  <div class="title-wrapper">
+                    <i class="icon icon--interest"></i>
+                    <p class="text">Location of Interest</p>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-action">
+                <button
+                  type="button"
+                  class="btn btn--green"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Filter modal -->
+    <div
+      class="modal modal--covid-map fade"
+      id="filterModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="filterModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="content">
+              <div class="modal-title">
+                <div class="title-wrapper">
+                  <h4 class="subtitle">Filter by location type</h4>
+                  <p class="text">Search the area for</p>
+                </div>
+                <i class="icon icon--close fas fa-times" data-bs-dismiss="modal"></i>
+              </div>
+              <form class="modal-form">
+                <div class="form-group">
+                  <label class="custom-checkbox-wrapper" for="search-area-one">
+                    <div class="title-wrapper">
+                      <i class="icon icon--station"></i>
+                      <p class="text">Vaccination stations</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="form-control form-control--checkbox"
+                      name="filtercheckboxArea"
+                      id="search-area-one"
+                      value="one"
+                    />
+                    <div class="custom-checkbox">
+                      <i class="icon icon--check fas fa-check"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label class="custom-checkbox-wrapper" for="search-area-two">
+                    <div class="title-wrapper">
+                      <i class="icon icon--buses"></i>
+                      <p class="text">Vaccination buses</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="form-control form-control--checkbox"
+                      name="filtercheckboxArea"
+                      id="search-area-two"
+                      value="two"
+                    />
+                    <div class="custom-checkbox">
+                      <i class="icon icon--check fas fa-check"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <label
+                    class="custom-checkbox-wrapper"
+                    for="search-area-three"
+                  >
+                    <div class="title-wrapper">
+                      <i class="icon icon--testing"></i>
+                      <p class="text">Testing sites</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="form-control form-control--checkbox"
+                      name="filtercheckboxArea"
+                      id="search-area-three"
+                      value="three"
+                    />
+                    <div class="custom-checkbox">
+                      <i class="icon icon--check fas fa-check"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group borderless">
+                  <label class="custom-checkbox-wrapper" for="search-area-four">
+                    <div class="title-wrapper">
+                      <i class="icon icon--interest"></i>
+                      <p class="text">Locations of interest</p>
+                    </div>
+                    <input
+                      type="checkbox"
+                      class="form-control form-control--checkbox"
+                      name="filtercheckboxArea"
+                      id="search-area-four"
+                      value="four"
+                    />
+                    <div class="custom-checkbox">
+                      <i class="icon icon--check fas fa-check"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="btn-action">
+                  <button type="button" class="btn btn--green">Apply</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Find Station Location modal -->
+    <div
+      class="modal modal--covid-map fade"
+      id="stationModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="stationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="content">
+              <div class="modal-title">
+                <div class="title-wrapper title-wrapper--has-icon">
+                  <i class="icon icon--station"></i>
+                  <p class="text">Vaccination station</p>
+                </div>
+                <i class="icon icon--close fas fa-times" data-bs-dismiss="modal"></i>
+              </div>
+              <div class="modal-info mt-2">
+                <div class="modal-field">
+                  <h4 class="subtitle">Northcote Community Vaccination Centre</h4>
+                  <p class="text">16-18 College Road, Northcote, Auckland 0627</p>
+                </div>
+                <div class="modal-field">
+                  <h4 class="text bold">OPENING HOURS</h4>
+                  <p class="text">Mon – Sun: 8:30 AM – 4:30 PM</p>
+                </div>
+                <div class="modal-field modal-field--badge">
+                  <div class="badge">
+                    <i class="icon fas fa-phone-alt"></i> 09 425 8585 
+                  </div>
+                  <div class="badge">
+                    <i class="icon fas fa-phone-alt"></i> 09 425 8585 
+                  </div>
+                </div>
+              </div>
+              <div class="btn-action">
+                <button type="button" class="btn btn--green">Get Direction</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Find Buses Location modal -->
+    <div
+      class="modal modal--covid-map fade"
+      id="busesModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="busesModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="content">
+              <div class="modal-title">
+                <div class="title-wrapper title-wrapper--has-icon">
+                  <i class="icon icon--buses"></i>
+                  <p class="text">Vaccination buses</p>
+                </div>
+                <i class="icon icon--close fas fa-times" data-bs-dismiss="modal"></i>
+              </div>
+              <div class="modal-info mt-2">
+                <div class="modal-field">
+                  <h4 class="subtitle">Busika Vax, No. 2</h4>
+                  <p class="text">770 Gt Sth Rd, Wiri - Vodafone Events Centre
+                    Manukau</p>
+                </div>
+                <div class="modal-field">
+                  <h4 class="text bold">Open and Close Date</h4>
+                  <ul class="list">
+                    <li class="list__item">
+                      <i class="icon icon--circle green"></i>
+                      <p class="text">Friday, 01 October 2021</p>
+                    </li>
+                    <li class="list__item">
+                      <i class="icon icon--circle red"></i>
+                      <p class="text">Saturday, 02 October 2021</p>
+                    </li>
+                  </ul>
+                </div>                
+                <div class="modal-field">
+                  <h4 class="text bold">Provider Name</h4>
+                  <p class="text">Pacific</p>
+                </div>
+                <div class="modal-field">
+                  <h4 class="text bold">Team Name</h4>
+                  <p class="text">South Seas</p>
+                </div>                                
+              </div>
+              <div class="btn-action">
+                <button type="button" class="btn btn--green">Get Direction</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- JavaScript File -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
     <script src="dist/all.js?cb=1634008180378"></script>
   </body>
 </html>
