@@ -200,3 +200,53 @@ main {
     }
   }
 }
+.custom-radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 0 0 20px;
+  &.reverse {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 0;
+  }
+  &:last-child {
+    margin: 0;
+  }
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 12px;
+    }    
+  }
+  .form-control--radio {
+    display: none;
+    &:checked ~ .custom-radio {
+      &::after {
+        background-color: #37474F;
+      }
+    }
+  }
+  .custom-radio {
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 2px solid #282727;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      background-color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      border-radius: 50%;
+    }
+  }
+}

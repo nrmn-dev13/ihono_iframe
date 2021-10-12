@@ -101,7 +101,8 @@
               src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>
             <div class="button-wrapper">
-              <button class="btn btn--white btn--rounded">
+              <button class="btn btn--white btn--rounded" data-bs-toggle="modal"
+              data-bs-target="#notifyModal">
                 <i class="icon fas fa-bell"></i> Notify me locations of interest
               </button>
             </div>
@@ -185,7 +186,7 @@
                 </div>
                 <i class="icon icon--close fas fa-times" data-bs-dismiss="modal"></i>
               </div>
-              <form class="modal-form">
+              <form class="modal-form modal-form--filter">
                 <div class="form-group">
                   <label class="custom-checkbox-wrapper" for="search-area-one">
                     <div class="title-wrapper">
@@ -367,6 +368,91 @@
               <div class="btn-action">
                 <button type="button" class="btn btn--green">Get Direction</button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Notify modal -->
+    <div
+      class="modal modal--covid-map fade"
+      id="notifyModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="notifyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="content">
+              <div class="modal-title modal-title--titleless">                
+                <i class="icon icon--close fas fa-times" data-bs-dismiss="modal"></i>
+              </div>
+              <div class="modal-info">
+                <div class="modal-field">
+                  <h4 class="title">Notify Me</h4>
+                  <p class="text">
+                    Notify me when a Location of Interest is within my suburb
+                  </p>
+                </div>                
+              </div>
+              <form action="" class="modal-form">
+                <div class="form-group">
+                  <label class="custom-checkbox-wrapper reverse" for="tick-checkbox">
+                    <div class="title-wrapper">                  
+                      <p class="text bold">Tick checkbox, if you want to search your location</p>
+                    </div>
+                    <input type="checkbox" class="form-control form-control--checkbox" name="tickCheckbox" id="tick-checkbox" value="one">
+                    <div class="custom-checkbox">
+                      <i class="icon icon--check fas fa-check"></i>
+                    </div>
+                  </label>
+                </div>
+                <div class="form-group form-group--location">
+                  <div class="input-wrapper">
+                    <input type="text" class="form-control" placeholder="Eg. Auckland CBD">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="" class="text bold">Search and select my suburb</label>
+                  <select class="form-select mb-2" aria-label="Default select example">
+                    <option selected>Abbotsford</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+                <div class="form-group form-group--inline">
+                  <label class="custom-radio-wrapper reverse" for="notify-one">
+                    <div class="title-wrapper">                  
+                      <p class="text">Email</p>
+                    </div>
+                    <input type="radio" class="form-control form-control--radio" name="notifyRadio" checked="" id="notify-one" value="email">
+                    <div class="custom-radio"></div>
+                  </label>
+                  <label class="custom-radio-wrapper reverse" for="notify-two">
+                    <div class="title-wrapper">                  
+                      <p class="text">Mobile number/SMS</p>
+                    </div>
+                    <input type="radio" class="form-control form-control--radio" name="notifyRadio" id="notify-two" value="phone">
+                    <div class="custom-radio"></div>
+                  </label>
+                </div>
+                <div class="form-group form-group--email active">
+                  <div class="input-wrapper">
+                    <input type="text" class="form-control" placeholder="Eg. dedekysf@gmail.com ">
+                  </div>
+                </div>
+                <div class="form-group form-group--phone">
+                  <div class="input-wrapper">
+                    <input type="text" class="form-control" placeholder="+64 21 123 4567">
+                  </div>
+                </div>
+                <div class="btn-action">
+                  <button type="button" class="btn btn--green">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

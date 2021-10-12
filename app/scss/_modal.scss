@@ -37,6 +37,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      &--titleless {
+        justify-content: flex-end;
+      }
       .title-wrapper {
         &--has-icon {
           display: flex;
@@ -57,23 +60,71 @@
     }
     .modal-form {
       margin-top: 32px;
-      .form-group {
-        padding-bottom: 22px;
-        margin-bottom: 22px;
-        position: relative;
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          width: 100%;
-          border-bottom: 1px solid $ltGray;
+      &--filter {
+        .form-group {
+          padding-bottom: 22px;
+          margin-bottom: 22px;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            border-bottom: 1px solid $ltGray;
+          }
+          &.borderless {
+            &::after {            
+              border-bottom: none;
+            } 
+          }
         }
-        &.borderless {
-          &::after {            
-            border-bottom: none;
-          } 
+      }
+      .form-group {        
+        margin-bottom: 30px;
+        &--inline {
+          display: flex;
+          .custom-radio-wrapper {
+            margin-right: 30px;
+            &:last-child {
+              margin-right: 0;
+            }
+            .custom-radio {
+              margin-right: 10px;
+            }
+          }
+        }
+        &--location {
+          display: none;
+          &.active {
+            display: block;
+          }
+        }
+        &--phone {
+          display: none;
+          &.active {
+            display: block;
+          }
+        }
+        &--email {
+          display: none;
+          &.active {
+            display: block;
+          }
+        }
+        .form-control, .form-select {
+          border: 2px solid rgba(40, 39, 39, 0.8);
+          box-sizing: border-box;
+          border-radius: 8px;
+          padding: 14px 19px;
+          &.disabled {
+            background: #F8F7F6;
+            border: 2px solid #CED4DA;
+            box-sizing: border-box;
+            pointer-events: none;
+            color: #CED4DA;
+          }
         }
       }
     }
