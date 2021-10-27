@@ -5,10 +5,12 @@ var app = {};
 var getStartedModal = new bootstrap.Modal(document.getElementById("getStarted"), {});
 var vacStationModal = new bootstrap.Modal(document.getElementById("stationModal"), {});
 var vacBusesModal = new bootstrap.Modal(document.getElementById("busesModal"), {});
+var locInterestModal = new bootstrap.Modal(document.getElementById("locationInterestModal"), {});
 document.onreadystatechange = function () {
   //getStartedModal.show();
-  vacStationModal.show();
+  //vacStationModal.show();
   //vacBusesModal.show();
+  locInterestModal.show();  
 };
 // Checkbox function
 const checkboxLocation = document.querySelector('#tick-checkbox');

@@ -126,6 +126,10 @@ main {
     background-repeat: no-repeat;
     background-image: url(../dist/img/vaccination-buses-icon.png);
   }
+  &.fas {
+    color: rgba(40, 39, 39, 0.8);
+    font-size: 14px;
+  }
 }
 .input-wrapper {
   position: relative;
