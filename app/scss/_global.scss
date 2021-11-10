@@ -73,6 +73,12 @@ main {
 .icon {
   display: flex;
   flex: 0 0 auto;
+  &--box {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    background-color: #699FF3;
+  }
   &--circle {
     height: 16px;
     width: 16px;
